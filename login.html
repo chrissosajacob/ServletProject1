@@ -1,0 +1,60 @@
+<html>
+    <head>
+      <script>
+        function validateLoginForm(){
+        var uname=document.login.user_name.value;
+        var pass=document.login.pass_word.value;
+        var type=document.login.role.value;
+
+        if(uname==null ||uname==""){
+          alert("name cant be blank");
+          return false;
+      }else if(pass.length<6){
+        alert("password  must be 6 characters");
+        return false;
+      }else if(type==null || type==""){
+        alert("Role can't be blank");
+        return false;
+      }
+
+    }
+      </script>
+        
+    </head>
+
+    <body bgcolor="LightGray">
+        <center>
+        <img src="D:\LUMINAR\HR-HELP-DESK-SYSTEM-PROJECT\login.png" width-="50" height="50"/>  
+        <h2>SIGN IN</h2>  
+        </center>
+       
+        <form name="login" method="post" action=""  >  
+        <table align="center" >    
+          <tr> 
+           <td>Username:</td>
+           <td><input type="text" name="user_name" placeholder="enter username" id="user_name"/></td> 
+          </tr>
+
+            <tr>
+            <td>Password:</td>
+            <td><input type="password" name="pass_word" placeholder="enter password" id="pass_word"/></td>
+            </tr>
+
+             <tr>
+            <td>Select Role:</td>
+            <td><select name="role" id="role">
+                        <option value="">--select One--</option>
+                        <option value="HR HEAD">HR HEAD</option>
+                        <option value="HR" >HR</option>
+                        <option value="EMPLOYEE">EMPLOYEE</option>
+                     </select></td>
+                    </tr>      
+           
+        </table> 
+        <center>
+        <input type="submit" value="LOGIN" style="width: 100px;" onclick="return validateLoginForm()"/><br><br>
+        Don't have an account?<a href="register.html">create an account</a>
+         </center>
+        </form>
+    </body>
+</html>

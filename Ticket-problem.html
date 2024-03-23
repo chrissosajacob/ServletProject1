@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <script>
+         function validateTicketForm(){
+            var dates=document.ticket.dates.value;
+            var cat=document.ticket.category.value;
+            var desc=document.ticket.description.value;
+
+            if(dates==null||dates==""){
+                alert("please select the date");
+                return false;
+            }else if(cat==null||cat==""){
+                alert("please select the category");
+                return false;
+            }else if(desc==null||desc==""){
+                alert("please enter the problem description");
+                return false;
+            }
+            document.ticket-problem.submit();
+         }
+        </script>
+    </head>
+    <center><h2>RAISE THE TICKET</h2></center>
+    <body>
+        <form name="ticket" method="post" onsubmit="return validateTicketForm()">
+            <table align="center">
+        <tr>
+        <td>Select Date:</td>
+        <td><input type="date" name="dates" id="dates"/></td> 
+        </tr>
+        <tr>
+            <td>Category:</td>
+            <td><select name="category">
+                <option value="">--select one--</option>
+                <option value="allowance">allowance</option>
+                <option value="co-worker related issues">co-worker related issues</option>
+            </select></td>
+        </tr>
+        <tr>
+            <td>About Problem:</td>
+            <td><textarea name="description" id="description" rows="4" cols="30"></textarea> </td>
+        </tr>
+       
+    </table><br>
+    <center>
+        <input type="submit" value="RAISE"  />
+     </center>
+        </form>
+    </body>
+</html>

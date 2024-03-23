@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <script>
+             function validateCategoryForm(){
+                var cat=document.categories.category.value;
+                if(cat=="null"||cat==""){
+                    alert("enter category");
+                    return false;
+                }
+                document.categories.submit();
+             }
+        </script>
+    </head>
+    <center><h1>CATEGORY</h1></center>
+    <body>
+        <form name="categories" method="post" onsubmit="return validateCategoryForm()">
+            <table align="center">
+            <tr>
+            <td>Enter Category:</td>
+            <td><input type="text" name="category" id="category"/></td>   
+            </tr>
+        </table><br>
+        <center>
+            <input type="submit" value="ADD CATEGORY"  />
+          </center>
+</form>
+  
+    </body>
+</html>

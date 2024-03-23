@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <script>
+              function validateStatusForm(){
+                var dates=document.statusForm.dates.value;
+                var statusValue=document.statusForm.svalue.value;
+                var desc=document.statusForm.description.value;
+
+                if(dates==null||dates==""){
+                    alert("please select the date");
+                    return false;
+                }else if( statusValue==null|| statusValue==""){
+                    alert("please select any status Value");
+                    return false;
+                }else if( desc==null|| desc==""){
+                    alert("enter the description");
+                    return false;
+                }
+                document.statusForm.submit();
+              }
+        </script>
+    </head>
+    <body>
+        <form name="statusForm" method="post" onsubmit="return validateStatusForm()">
+            <table align="center">
+                <tr>
+                    <td>Date:</td>
+                    <td><input type="date" name="dates" id="dates"></td>
+                </tr>
+                <tr>
+                    <td>Status:</td>
+                    <td><select name="svalue">
+                        <option value="">--select one--</option>
+                        <option value="in-progress">in-progress</option>
+                        <option value="pending">pending</option>
+                        <option value="resolved">resolved</option>
+                        </select></td>
+                </tr>
+                <tr>
+                    <td>Description:</td>
+                    <td><textarea name="description" id="description" rows="4" cols="30"></textarea> </td>
+                </tr>
+               
+        </table><br>
+            <center>
+                <input type="submit" value="UPDATE"  />
+              </center>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <script>
+            function validateAllocationForm(){
+            var dates=document.allocation.dates.value;
+            var hr=document.allocation.hr-names.value;
+            if(dates==null||dates==""){
+                alert("please select the date");
+                return false;
+            }else if(hr==null||hr==""){
+                alert("please select the category");
+                return false;
+            }
+            document.allocation.submit();
+        }
+        </script>
+    </head>
+    <center><h2>TICKET ALLOCATION</h2></center>
+    <body>
+        <form name="allocation" method="post" onsubmit="return validateAllocationForm()">
+            <table align="center">
+            <tr>
+                <td>Date:</td>
+                <td><input type="date" name="dates" id="dates"></td>
+            </tr>
+            <tr>
+                <td>HR Name:</td>
+                <td><select name="hr-names">
+                    <option value="">--select one--</option>
+                    <option value="veena">veena</option>
+                    <option value="anu">anu</option>
+                    </select></td>
+        </tr>
+    </table><br>
+        <center>
+            <input type="submit" value="ALLOCATE"  />
+          </center>
+        </form>
+    </body>
+</html>
